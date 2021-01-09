@@ -12,8 +12,8 @@ Webcam.take_picture()
 # def send_email(email_receipient, )
 
 #define the attribute values for the email
-photo_email_receipient = "aetsproject2020@gmail.com"
-body = "here is the mail i sent you with subprocess"
+photo_email_receipient = "f-drexel@gmx.de"
+body = "I sent this mail by triggering the 'Receive mail' python script form my raspberry pi bitch!"
 subject = 'Mower Überwachung'
 
 #   create multipart message object with suject body etc...
@@ -24,7 +24,7 @@ msg['Subject'] = subject
 msg.attach(MIMEText(body, 'plain'))
 
 #create the attachment( in this library describe as a payload)  "part" for it to be attached to the message
-filename = 'test'
+filename = 'image.jpg'
 attachment = open(filename, 'rb')
 part = MIMEBase('application', 'octet-strem') # this opens a stream to send the attachment and closes it back up
 part.set_payload(attachment.read()) # get the attachment into the part
