@@ -3,9 +3,9 @@ import easyimap as e
 from subprocess import *
 import imaplib
 import Webcam
-import send_mail_attachment
+import send_mail
 import time
-import delete_all_mails
+import delete
 
 # wir brauchen noch etwas mit dem wir den event "email ist eingegangen" bemerken und unsere python scripts triggern
 
@@ -47,13 +47,13 @@ for unseen_email in unseen_emails:
     #         subproc = Popen(['python3', 'send_mail_attachment.py'])
     #         subproc.wait()
 
-            send_mail_attachment(recipient, filename)
+            send_mail.attachment(recipient, filename)
             print('mail sent')
             print('------------------')
 
 #delete all mails from the account
 time.sleep(10)
-delete_all_mails(email_user, password, imap_url)
+delete.all_mails(email_user, password, imap_url)
 
 
 

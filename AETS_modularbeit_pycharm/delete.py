@@ -1,4 +1,4 @@
-def delete_all_mails(user, password, imap_url):
+def all_mails(user, password, imap_url):
 
    import imaplib
 

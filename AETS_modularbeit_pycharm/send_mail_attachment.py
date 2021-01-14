@@ -1,6 +1,6 @@
 #sends mail from "aetsproject2020@gmail.com" to "receipient"
 #both inputs have to be strings
-def send_mail_attachment(recipient, filename):
+def attachment(recipient, filename):
 
     import smtplib
     from email.mime.text import MIMEText
