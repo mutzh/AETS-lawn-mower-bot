@@ -29,7 +29,8 @@ for unseen_email in unseen_emails:
 
     # check if e-mail adress is authorized
     for recipient in authorized_email_recipients:
-        print(recipient)
+        print('authorized: 'recipient)
+        print('sender: ')
         if recipient in unseen_email.from_addr and unseen_email.body == "photo":
             # take picture and save it in current folder
             Webcam.take_picture(filename)
