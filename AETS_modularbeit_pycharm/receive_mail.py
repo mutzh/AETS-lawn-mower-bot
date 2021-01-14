@@ -31,15 +31,12 @@ if unseen_emails_number < 1:
 else:
     # iterate through the list
     for unseen_email in unseen_emails:
-        print(str(unseen_email.body))
-        if str(unseen_email.body) == "photo":
-            print("sucess")
 
         # check if e-mail adress is authorized
-        for recipient in authorized_email_recipients:
-            print('authorized: ', recipient)
+        for authorized_recipient in authorized_email_recipients:
+            print('authorized: ', authorized_recipient)
             print('sender: ', unseen_email.from_addr)
-            if recipient in unseen_email.from_addr and unseen_email.body == "photo":
+            if authorized_recipient in unseen_email.from_addr and "Photo" in unseen_email.body :
                 # take picture and save it in current folder
                 Webcam.take_picture(filename)
 
@@ -47,11 +44,15 @@ else:
         #         subproc = Popen(['python3', 'send_mail_attachment.py'])
         #         subproc.wait()
 
-                send_mail.attachment(recipient, filename)
-                print('mail sent to: ', recipient)
+                send_mail.attachment(authorized_recipient, filename)
+                print('mail sent to: ', authorized_recipient)
                 print('------------------')
-            elif recipient in unseen_email.from_addr and unseen_email.body == "list":
-                send_mail.text(recipient, str(authorized_email_recipients))
+            elif authorized_recipient in unseen_email.from_addr and "List" in unseen_email.body:
+                send_mail.text(authorized_recipient, str(authorized_email_recipients))
+            else:
+                send_mail.text(authorized_recipient, "Sie haben eine ungültige Anfrage getätigt, bitte berücksichtigen..."
+                                                     "Sie Gross- und Kleinschreibung versuchen es erneut. ..."
+                                                     "Der erste Buchstabe sollte gross geschrieben sein.")
 
     # delete all mails from the account
     time.sleep(10)
