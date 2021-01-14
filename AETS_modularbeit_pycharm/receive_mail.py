@@ -39,7 +39,7 @@ for unseen_email in unseen_emails:
 #der liste authorisierter emails ist
     #check if e-mail adress is authorized
     for recipient in authorized_email_recipients:
-        if recipient in unseen_email.from_addr:
+        if recipient in unseen_email.from_addr and unseen_email.body == "photo":
             # take picture and save it in current folder
             Webcam.take_picture(filename)
 
@@ -50,6 +50,8 @@ for unseen_email in unseen_emails:
             send_mail.attachment(recipient, filename)
             print('mail sent to: ', recipient)
             print('------------------')
+        elif recipient in unseen_email.from_addr and unseen_email.body == "list"
+            send_mail.text(recipient, str(authorized_email_recipients))
 
 #delete all mails from the account
 # time.sleep(10)
