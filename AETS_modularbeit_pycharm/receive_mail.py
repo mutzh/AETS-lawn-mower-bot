@@ -48,11 +48,11 @@ for unseen_email in unseen_emails:
     #         subproc.wait()
 
             send_mail.attachment(recipient, filename)
-            print('mail sent')
+            print('mail sent to: ', recipient)
             print('------------------')
 
 #delete all mails from the account
-time.sleep(10)
+# time.sleep(10)
 delete.all_mails(email_user, password, imap_url)
 
 
