@@ -5,12 +5,13 @@ import Webcam
 import send_mail
 import time
 import delete
+import authorized
 
 # setup email and password for the account that is supposed to be read
 email_user = 'aetsproject2020@gmail.com'
 password = 'Info4Ever'
 imap_url = 'imap.gmail.com'
-authorized_email_recipients = ['mutzhdom@gmail.com', 'aetsproject2020@gmail.com']
+authorized_email_recipients = authorized.jason_read('authorized_adresses.json')
 
 # define filename for the attachment
 filename = "image.jpg"
@@ -36,7 +37,7 @@ else:
         for authorized_recipient in authorized_email_recipients:
             print('authorized: ', authorized_recipient)
             print('sender: ', unseen_email.from_addr)
-            if authorized_recipient in unseen_email.from_addr and "Photo" in unseen_email.body :
+            if authorized_recipient in unseen_email.from_addr and "Photo" in unseen_email.body and "[" not in unseen_email.body:
                 # take picture and save it in current folder
                 Webcam.take_picture(filename)
 
@@ -47,9 +48,11 @@ else:
                 send_mail.attachment(authorized_recipient, filename)
                 print('mail sent to: ', authorized_recipient)
                 print('------------------')
-            elif authorized_recipient in unseen_email.from_addr and "List" in unseen_email.body:
+            elif authorized_recipient in unseen_email.from_addr and "List" in unseen_email.body and "[" not in unseen_email.body:
                 send_mail.text(authorized_recipient, str(authorized_email_recipients))
-            
+            elif authorized_recipient in unseen_email.from_addr and "[" in unseen_email.body:
+                authorized.jason_write('authorized_adresses.json', unseen_email.body)
+
 
     # delete all mails from the account
     time.sleep(10)
