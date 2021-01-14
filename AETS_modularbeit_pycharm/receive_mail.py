@@ -21,33 +21,39 @@ con = e.connect(imap_url, email_user, password, 'Inbox', 587)
 
 # get list of unseen emails
 unseen_emails = con.unseen(10)
-print("the number of mails received is: ", len(unseen_emails))
+unseen_emails_number = len(unseen_emails)
+print("the number of mails received is: ", unseen_emails_number)
 
-# iterate through the list
-for unseen_email in unseen_emails:
-    print(unseen_email.body)
+# If there are 0 unseen emails, stop the script here, else proceed
+if unseen_emails_number < 1:
+    pass
 
-    # check if e-mail adress is authorized
-    for recipient in authorized_email_recipients:
-        print('authorized: ', recipient)
-        print('sender: ', unseen_email.from_addr)
-        if recipient in unseen_email.from_addr and unseen_email.body == "photo":
-            # take picture and save it in current folder
-            Webcam.take_picture(filename)
+else:
+    # iterate through the list
+    for unseen_email in unseen_emails:
+        print(unseen_email.body)
 
-    # #       define and call subprocess CHANGE THE CALL WITH "pyton" TO A CALL WITH "python3" for the raspberry
-    #         subproc = Popen(['python3', 'send_mail_attachment.py'])
-    #         subproc.wait()
+        # check if e-mail adress is authorized
+        for recipient in authorized_email_recipients:
+            print('authorized: ', recipient)
+            print('sender: ', unseen_email.from_addr)
+            if recipient in unseen_email.from_addr and unseen_email.body == "photo":
+                # take picture and save it in current folder
+                Webcam.take_picture(filename)
 
-            send_mail.attachment(recipient, filename)
-            print('mail sent to: ', recipient)
-            print('------------------')
-        elif recipient in unseen_email.from_addr and unseen_email.body == "list":
-            send_mail.text(recipient, str(authorized_email_recipients))
+        # #       define and call subprocess CHANGE THE CALL WITH "pyton" TO A CALL WITH "python3" for the raspberry
+        #         subproc = Popen(['python3', 'send_mail_attachment.py'])
+        #         subproc.wait()
 
-# delete all mails from the account
-time.sleep(10)
-delete.all_mails(email_user, password, imap_url)
+                send_mail.attachment(recipient, filename)
+                print('mail sent to: ', recipient)
+                print('------------------')
+            elif recipient in unseen_email.from_addr and unseen_email.body == "list":
+                send_mail.text(recipient, str(authorized_email_recipients))
+
+    # delete all mails from the account
+    time.sleep(10)
+    delete.all_mails(email_user, password, imap_url)
 
 
 
