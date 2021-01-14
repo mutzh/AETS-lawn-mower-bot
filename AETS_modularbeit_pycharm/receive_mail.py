@@ -34,7 +34,7 @@ print("the number of mails received is: ", len(unseen_emails))
 
 #iterate through the list
 for unseen_email in unseen_emails:
-
+    print(unseen_email.body)
 #hier soll das ding spater schauen ob dieser string in einem der strings aus
 #der liste authorisierter emails ist
     #check if e-mail adress is authorized
@@ -50,7 +50,7 @@ for unseen_email in unseen_emails:
             send_mail.attachment(recipient, filename)
             print('mail sent to: ', recipient)
             print('------------------')
-        elif recipient in unseen_email.from_addr and unseen_email.body == "list"
+        elif recipient in unseen_email.from_addr and unseen_email.body == "list":
             send_mail.text(recipient, str(authorized_email_recipients))
 
 #delete all mails from the account
