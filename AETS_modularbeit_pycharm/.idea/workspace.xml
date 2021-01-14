@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bab96fc4-7c03-4f9d-a872-f64d07e2581c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/check_gmail.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image.jpg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/send_mail_prototype.py" beforeDir="false" afterPath="$PROJECT_DIR$/send_mail_prototype.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/send_mail_prototype.py.save" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.jpg" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,20 +20,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Webcam.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="100">
+            <state relative-caret-position="125">
               <caret line="5" column="21" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/check_gmail.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="275">
-              <caret line="11" column="31" selection-start-line="11" selection-start-column="31" selection-end-line="11" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -45,11 +41,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/send_mail_prototype.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="50">
-              <caret line="7" column="43" selection-start-line="7" selection-start-column="43" selection-end-line="7" selection-end-column="43" />
+            <state relative-caret-position="350">
+              <caret line="14" column="51" selection-start-line="14" selection-start-column="51" selection-end-line="14" selection-end-column="51" />
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
               </folding>
@@ -57,10 +53,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/receive_mail.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="975">
+            <state relative-caret-position="1075">
               <caret line="43" selection-start-line="43" selection-end-line="43" />
               <folding>
                 <element signature="e#0#20#0" expanded="true" />
@@ -97,7 +93,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-6" />
     <option name="y" value="-6" />
     <option name="width" value="1240" />
@@ -286,7 +282,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1066" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24920969" />
@@ -311,23 +307,6 @@
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/test_dir_2/subprocess_test.py" />
-    <entry file="file://$PROJECT_DIR$/Webcam.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="5" column="21" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/check_gmail.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="11" column="31" selection-start-line="11" selection-start-column="31" selection-end-line="11" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/send_email.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="400">
@@ -338,22 +317,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/send_mail_prototype.py">
+    <entry file="file://$PROJECT_DIR$/send_mail_prototype.py.save">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="7" column="43" selection-start-line="7" selection-start-column="43" selection-end-line="7" selection-end-column="43" />
+        <state relative-caret-position="-200" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/check_gmail.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="11" column="31" selection-start-line="11" selection-start-column="31" selection-end-line="11" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Webcam.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="5" column="21" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
           <folding>
-            <element signature="e#0#14#0" expanded="true" />
+            <element signature="e#0#11#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/receive_mail.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="975">
+        <state relative-caret-position="1075">
           <caret line="43" selection-start-line="43" selection-end-line="43" />
           <folding>
             <element signature="e#0#20#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/send_mail_prototype.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="14" column="51" selection-start-line="14" selection-start-column="51" selection-end-line="14" selection-end-column="51" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -12,7 +12,7 @@ Webcam.take_picture()
 # def send_email(email_receipient, )
 
 #define the attribute values for the email
-photo_email_receipient = "mutzhdom@gmail.com"
+photo_email_receipient = "aetsproject2020@gmail.com"
 body = "I sent this mail by triggering the 'Receive mail' python script form my raspberry pi bitch!"
 subject = 'Mower Überwachung'
 
