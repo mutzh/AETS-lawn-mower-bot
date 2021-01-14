@@ -15,7 +15,8 @@ def jason_read(filename):
         data = myfile.read()
 
         obj = json.loads(data)
-        type(obj)
+        print(obj)
+    return obj
 
 
 jason_read('authorized_adresses.json')
