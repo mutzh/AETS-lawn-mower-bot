@@ -9,7 +9,6 @@ def all_mails(user, password, imap_url):
     typ, data = box.search(None, 'ALL')
     number_deleted_emails = len(data[0].split())
 
-
     for num in data[0].split():
         box.store(num, '+X-GM-LABELS', '\\Trash')
     box.expunge()
