@@ -31,8 +31,8 @@ if unseen_emails_number < 1:
 else:
     # iterate through the list
     for unseen_email in unseen_emails:
-        print(unseen_email.body)
-        if unseen_email.body == "photo":
+        print(str(unseen_email.body))
+        if str(unseen_email.body) == "photo":
             print("sucess")
 
         # check if e-mail adress is authorized

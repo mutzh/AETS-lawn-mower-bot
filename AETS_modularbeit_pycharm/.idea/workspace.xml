@@ -42,8 +42,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/receive_mail.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="500">
-              <caret line="52" column="85" selection-start-line="52" selection-start-column="78" selection-end-line="52" selection-end-column="85" />
+            <state relative-caret-position="275">
+              <caret line="35" column="27" lean-forward="true" selection-start-line="35" selection-start-column="27" selection-end-line="35" selection-end-column="27" />
               <folding>
                 <element signature="e#1#21#0" expanded="true" />
               </folding>
@@ -119,7 +119,7 @@
           <expand>
             <path>
               <item name="AETS_modularbeit_pycharm" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="C:\Users\mutzh\AETS-Mower-bot\AETS_modularbeit_pycharm" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
             </path>
           </expand>
           <select />
@@ -376,8 +376,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/receive_mail.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="500">
-          <caret line="52" column="85" selection-start-line="52" selection-start-column="78" selection-end-line="52" selection-end-column="85" />
+        <state relative-caret-position="275">
+          <caret line="35" column="27" lean-forward="true" selection-start-line="35" selection-start-column="27" selection-end-line="35" selection-end-column="27" />
           <folding>
             <element signature="e#1#21#0" expanded="true" />
           </folding>
