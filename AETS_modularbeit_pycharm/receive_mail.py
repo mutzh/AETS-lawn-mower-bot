@@ -1,3 +1,4 @@
+
 import easyimap as e
 from subprocess import *
 
@@ -29,11 +30,13 @@ server = e.connect('imap.gmail.com', email_user, password, 'Inbox', 587)
 
 #get list of unseen emails
 unseen_emails = server.unseen(10)
-
+print("the number of mails received is: ", len(unseen_emails))
 
 #iterate through the list
 for unseen_email in unseen_emails:
-    if unseen_email.from_addr == 'aetsproject2020@gmail.com':
+#hier soll das ding spater schauen ob dieser string in einem der strings aus
+#der liste authorisierter emails ist
+    if 'aetsproject2020@gmail.com'in unseen_email.from_addr:
 
         print(unseen_email.body)
 #       define and call subprocess CHANGE THE CALL WITH "pyton" TO A CALL WITH "python3" for the raspberry
