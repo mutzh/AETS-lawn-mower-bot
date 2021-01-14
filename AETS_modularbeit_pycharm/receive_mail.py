@@ -12,7 +12,7 @@ email_user = 'aetsproject2020@gmail.com'
 password = 'Info4Ever'
 imap_url = 'imap.gmail.com'
 authorized_email_recipients = authorized.jason_read('authorized_adresses.json')
-
+print(type(authorized_email_recipients))
 # define filename for the attachment
 filename = "image.jpg"
 
