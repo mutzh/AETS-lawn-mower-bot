@@ -16,7 +16,6 @@ def attachment(recipient, filename):
 
 
     #define the attribute values for the email
-    recipient = "aetsproject2020@gmail.com"
     body = "I sent this mail by triggering the 'Receive mail' python script form my raspberry pi bitch!"
     subject = 'Mower Überwachung'
 

@@ -1,19 +1,19 @@
 def all_mails(user, password, imap_url):
 
-   import imaplib
+    import imaplib
 
-   box = imaplib.IMAP4_SSL(imap_url)
-   box.login(user, password)
-   box.select('INBOX')
-   typ, data = box.search(None, 'ALL')
-   print("deleted emails" + data[0].split())
-   for num in data[0].split():
-      box.store(num, '+X-GM-LABELS', '\\Trash')
-   box.expunge()
-   box.close()
-   box.logout()
+    box = imaplib.IMAP4_SSL(imap_url)
+    box.login(user, password)
+    box.select('INBOX')
+    typ, data = box.search(None, 'ALL')
+    print("deleted emails" + data[0].split())
+    for num in data[0].split():
+        box.store(num, '+X-GM-LABELS', '\\Trash')
+    box.expunge()
+    box.close()
+    box.logout()
 
-
+    print('All mails were moved to the Bin, where they will be automatically deleted after 30 days')
 
 
 
