@@ -5,7 +5,7 @@ def jason_write(filename, list):
         json.dump(list, f)
 
 
-list = ['a', 'b', 'c']
+
 jason_write('authorized_adresses.json', list)
 
 def jason_read(filename):
