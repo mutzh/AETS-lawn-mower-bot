@@ -5,7 +5,7 @@ def jason_write(filename, list):
         json.dump(list, f)
 
 
-
+list = ["mutzhdom@gmail.com", "aetsproject2020@gmail.com"]
 jason_write('authorized_adresses.json', list)
 
 def jason_read(filename):
@@ -16,5 +16,6 @@ def jason_read(filename):
 
         obj = json.loads(data)
         print(obj)
+
 
 jason_read('authorized_adresses.json')
