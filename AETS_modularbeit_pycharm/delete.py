@@ -6,7 +6,7 @@ def all_mails(user, password, imap_url):
    box.login(user, password)
    box.select('INBOX')
    typ, data = box.search(None, 'ALL')
-   print(data[0].split())
+   print("deleted emails" + data[0].split())
    for num in data[0].split():
       box.store(num, '+X-GM-LABELS', '\\Trash')
    box.expunge()
