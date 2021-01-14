@@ -49,10 +49,7 @@ else:
                 print('------------------')
             elif authorized_recipient in unseen_email.from_addr and "List" in unseen_email.body:
                 send_mail.text(authorized_recipient, str(authorized_email_recipients))
-            else:
-                send_mail.text(authorized_recipient, "Sie haben eine ungültige Anfrage getätigt, bitte berücksichtigen..."
-                                                     "Sie Gross- und Kleinschreibung versuchen es erneut. ..."
-                                                     "Der erste Buchstabe sollte gross geschrieben sein.")
+            
 
     # delete all mails from the account
     time.sleep(10)
