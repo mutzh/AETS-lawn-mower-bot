@@ -39,7 +39,7 @@ else:
         if "Reset" in unseen_email.body and "[" not in unseen_email.body:
             authorized.jason_write('authorized_adresses.json', root_email_user)
             prompt = "the list of authorized users has been reset to only the root_email_user: " + str(root_email_user)
-            send_mail.text(send_mail.text(root_email_user, prompt))
+            send_mail.text(root_email_user, prompt)
 
         # check if e-mail adress is authorized
         for authorized_recipient in authorized_email_recipients:

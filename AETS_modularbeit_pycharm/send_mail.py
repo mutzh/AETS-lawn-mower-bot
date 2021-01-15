@@ -73,5 +73,6 @@ def text(recipient, text_body):
     server.sendmail('aetsproject2020@gmail.com', recipient, txt)
     server.quit()
 
-
-
+root_email_user = "herbert"
+prompt = "the list of authorized users has been reset to only the root_email_user: " + str(root_email_user)
+send_mail.text(send_mail.text(root_email_user, prompt))
