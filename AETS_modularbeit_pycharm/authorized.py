@@ -6,6 +6,7 @@ def jason_write(filename, list):
 
 
 list = ["mutzhdom@gmail.com", "aetsproject2020@gmail.com"]
+# list = "[a, a, a, a]\r\n"
 jason_write('authorized_adresses.json', list)
 
 def jason_read(filename):

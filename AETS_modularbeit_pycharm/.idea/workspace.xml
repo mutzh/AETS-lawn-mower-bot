@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bab96fc4-7c03-4f9d-a872-f64d07e2581c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/authorized.py" beforeDir="false" afterPath="$PROJECT_DIR$/authorized.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -24,8 +25,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/send_mail.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1381">
-              <caret column="53" lean-forward="true" selection-start-column="53" selection-end-column="53" />
+            <state>
+              <caret column="53" selection-start-column="53" selection-end-column="53" />
             </state>
           </provider>
         </entry>
@@ -34,7 +35,7 @@
         <entry file="file://$PROJECT_DIR$/authorized_adresses.json">
           <provider selected="true" editor-type-id="text-editor">
             <state>
-              <caret column="16" selection-start-column="16" selection-end-column="16" />
+              <caret selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -42,8 +43,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/authorized.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="18" column="14" selection-start-line="18" selection-start-column="14" selection-end-line="18" selection-end-column="14" />
+            <state relative-caret-position="200">
+              <caret line="8" column="1" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -61,7 +62,7 @@
         <entry file="file://$PROJECT_DIR$/test_script.py">
           <provider selected="true" editor-type-id="text-editor">
             <state>
-              <caret column="25" lean-forward="true" selection-start-column="25" selection-end-column="25" />
+              <caret column="25" selection-start-column="25" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -69,8 +70,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/receive_mail.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="550">
-              <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
+            <state relative-caret-position="1175">
+              <caret line="53" column="84" selection-start-line="53" selection-start-column="84" selection-end-line="53" selection-end-column="84" />
               <folding>
                 <element signature="e#1#21#0" expanded="true" />
               </folding>
@@ -115,8 +116,8 @@
         <option value="$PROJECT_DIR$/send_mail.py" />
         <option value="$PROJECT_DIR$/delete.py" />
         <option value="$PROJECT_DIR$/test.py" />
-        <option value="$PROJECT_DIR$/authorized_adresses.json" />
         <option value="$PROJECT_DIR$/receive_mail.py" />
+        <option value="$PROJECT_DIR$/authorized_adresses.json" />
         <option value="$PROJECT_DIR$/authorized.py" />
       </list>
     </option>
@@ -323,21 +324,20 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24920969" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3290461" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49947312" visible="true" weight="0.25187567" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49947312" visible="true" weight="0.25187567" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39871383" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32775453" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32775453" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.32775453" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50052685" side_tool="true" visible="true" weight="0.25187567" />
+      <window_info active="true" anchor="bottom" id="Event Log" order="9" sideWeight="0.50052685" side_tool="true" visible="true" weight="0.25187567" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.3290461" />
       <window_info anchor="bottom" id="Inspection Results" order="11" weight="0.3290461" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -349,23 +349,8 @@
     <entry file="file://$PROJECT_DIR$/test_dir_2/subprocess_test.py" />
     <entry file="file://$PROJECT_DIR$/send_mail_prototype.py.save" />
     <entry file="file://$PROJECT_DIR$/check_gmail.py" />
-    <entry file="file://$PROJECT_DIR$/send_email.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="500">
-          <caret line="20" selection-start-line="20" selection-end-line="20" />
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tst.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="11" column="21" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/send_email.py" />
+    <entry file="file://$PROJECT_DIR$/tst.py" />
     <entry file="file://$PROJECT_DIR$/Webcam.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="125">
@@ -375,8 +360,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/send_mail.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1381">
-          <caret column="53" lean-forward="true" selection-start-column="53" selection-end-column="53" />
+        <state>
+          <caret column="53" selection-start-column="53" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/authorized_adresses.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-column="18" />
         </state>
       </provider>
     </entry>
@@ -390,21 +382,14 @@
     <entry file="file://$PROJECT_DIR$/test_script.py">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret column="25" lean-forward="true" selection-start-column="25" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/authorized_adresses.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="16" selection-start-column="16" selection-end-column="16" />
+          <caret column="25" selection-start-column="25" selection-end-column="25" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/receive_mail.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="550">
-          <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
+        <state relative-caret-position="1175">
+          <caret line="53" column="84" selection-start-line="53" selection-start-column="84" selection-end-line="53" selection-end-column="84" />
           <folding>
             <element signature="e#1#21#0" expanded="true" />
           </folding>
@@ -413,8 +398,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/authorized.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="18" column="14" selection-start-line="18" selection-start-column="14" selection-end-line="18" selection-end-column="14" />
+        <state relative-caret-position="200">
+          <caret line="8" column="1" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
         </state>
       </provider>
     </entry>
