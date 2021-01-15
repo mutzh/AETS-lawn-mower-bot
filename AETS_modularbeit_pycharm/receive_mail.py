@@ -46,43 +46,49 @@ else:
             authorized.jason_write('authorized_adresses.json', root_email_user)
             prompt = "The list of authorized users has been reset to only the root_email_user: " + str(root_email_user)
             send_mail.text(root_email_user, prompt, " Mower Reset Success")
+        else:
+            # check if e-mail adress is authorized
+            for authorized_recipient in authorized_email_recipients:
 
-        # check if e-mail adress is authorized
-        for authorized_recipient in authorized_email_recipients:
+                # if condition to send a picture
+                if authorized_recipient in unseen_email.from_addr and "Photo" in unseen_email.body and "@" not in unseen_email.body:
 
-            # if condition to send a picture
-            if authorized_recipient in unseen_email.from_addr and "Photo" in unseen_email.body and "[" not in unseen_email.body:
+                    Webcam.take_picture(filename)
 
-                Webcam.take_picture(filename)
-
-                send_mail.with_attachment(authorized_recipient, filename)
+                    send_mail.with_attachment(authorized_recipient, filename)
 
 
-            # condition to view the list of authorized e-mails
-            elif authorized_recipient in unseen_email.from_addr and "List" in unseen_email.body and "[" not in unseen_email.body:
-                send_mail.text(authorized_recipient, str(authorized_email_recipients), "Mower Authorized Users")
+                # condition to view the list of authorized e-mails
+                elif authorized_recipient in unseen_email.from_addr and "List" in unseen_email.body and "@" not in unseen_email.body:
+                    send_mail.text(authorized_recipient, str(authorized_email_recipients), "Mower Authorized Users")
 
-            # condition to edit the list of authorized e-mails. the user sends a new list via mail.
-            # If all the adresses are valid, and the format is correct-->success mail,    else--> failure mail
-            elif authorized_recipient in unseen_email.from_addr and "[" in unseen_email.body:
+                # condition to edit the list of authorized e-mails. the user sends a new list via mail.
+                # If all the adresses are valid, and the format is correct-->success mail,    else--> failure mail
+                elif authorized_recipient in unseen_email.from_addr and "[" in unseen_email.body:
 
-                # get and validate the adress list from the email body
-                adress_string = unseen_email.body
-                adress_list = adress_string.split(",")
-                print(adress_list)
-                validation_success = validate_adresses(adress_list)
-                print (validation_success)
-                # if all adresses are valid, update the list in the json file
-                if validation_success is True:
-                    prompt = "All email adresses were validated and the list of authorized emails was updated sucessfully"
-                    send_mail.text(authorized_recipient, prompt, "Mower Changed Authorization Success")
-                    authorized.jason_write('authorized_adresses.json', adress_list)
-                else:  # send an error message
-                    prompt = '''There was a mistake. Either one of the e-mail adresses was not valid, or there was a problem with ''' \
-                             '''the input format. The textbody of the e-mail must ONLY contain a list of valid e-mail adresses in ''' \
-                             ''' the following format:     testmail_1@host.com, testmail_2@host.com,..., testmail_n@host.com \n'''\
-                             '''note that there are no quotes or parenthesis, just comma-seperated e-mail adresses.'''
-                    send_mail.text(authorized_recipient, prompt, "Mower Error")
+                    # get and validate the adress list from the email body
+                    adress_string = unseen_email.body
+                    adress_list = adress_string.split(",")
+                    print('hey', adress_list)
+                    validation_success = validate_adresses(adress_list)
+                    print(validation_success)
+                    # if all adresses are valid, update the list in the json file
+                    if validation_success is True:
+                        prompt = "All email adresses were validated and the list of authorized emails was updated sucessfully"
+                        send_mail.text(authorized_recipient, prompt, "Mower Changed Authorization Success")
+                        authorized.jason_write('authorized_adresses.json', adress_list)
+                    else:  # send an error message
+                        prompt = "Either one of the e-mail adresses was not valid, or there was a problem with the format\n" \
+                                 "Please make sure to use the following format:\n" \
+                                 "'adress_1@host.com,adress_2@host.com,...,adress_n@host.com'\n" \
+                                 "Note that there are no Spaces between the adresses " \
+                                 "The Quotes are also essential!" \
+
+                        # '''There was a mistake. Either one of the e-mail adresses was not valid, or there was a problem with ''' \
+                        #          '''the input format. \nThe textbody of the e-mail must ONLY contain a list of valid e-mail adresses in \n''' \
+                        #          ''' the following format:     "adress_1@host.com, adress_2@host.com,..., adress_n@host.com" \n'''\
+                        #          '''.'''
+                        send_mail.text(authorized_recipient, prompt, "Mower Error")
 
 
 
