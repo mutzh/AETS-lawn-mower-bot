@@ -64,11 +64,11 @@ else:
 
                 # condition to edit the list of authorized e-mails. the user sends a new list via mail.
                 # If all the adresses are valid, and the format is correct-->success mail,    else--> failure mail
-                elif authorized_recipient in unseen_email.from_addr and "[" in unseen_email.body:
+                elif authorized_recipient in unseen_email.from_addr and "@" in unseen_email.body:
 
                     # get and validate the adress list from the email body
                     adress_string = unseen_email.body
-                    adress_list = adress_string.split(",")
+                    adress_list = adress_string.split(", ")
                     print('hey', adress_list)
                     validation_success = validate_adresses(adress_list)
                     print(validation_success)
@@ -78,10 +78,10 @@ else:
                         send_mail.text(authorized_recipient, prompt, "Mower Changed Authorization Success")
                         authorized.jason_write('authorized_adresses.json', adress_list)
                     else:  # send an error message
-                        prompt = "Either one of the e-mail adresses was not valid, or there was a problem with the format\n" \
+                        prompt = "Either one of the e-mail adresses was not valid, or there was a problem with the format.\n" \
                                  "Please make sure to use the following format:\n" \
-                                 "'adress_1@host.com,adress_2@host.com,...,adress_n@host.com'\n" \
-                                 "Note that there are no Spaces between the adresses " \
+                                 "'adress_1@host.com, adress_2@host.com,..., adress_n@host.com'\n" \
+                                 "Note that there have to be Spaces between the adresses. " \
                                  "The Quotes are also essential!" \
 
                         # '''There was a mistake. Either one of the e-mail adresses was not valid, or there was a problem with ''' \

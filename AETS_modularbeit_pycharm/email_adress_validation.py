@@ -13,6 +13,7 @@ def validate_adresses(adress_list):
 adr = "mutzhdom@gmail.com,aetsproject2020@gmail.com"
 adr = adr.split(",")
 print(adr)
+print(len(adr))
 a = validate_adresses(adr)
 if a is True:
-    print("yes")
+    print('yess')
