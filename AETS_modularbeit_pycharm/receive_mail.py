@@ -69,14 +69,14 @@ else:
                 print(adress_list)
                 validation_status = email_adress_validation.validate(adress_list)
                 # if all adresses are valid, update the list in the json file
-                if validation_status is True:
+                if validation_status == True:
                     prompt = "All email adresses were validated and the list of authorized emails was updated sucessfully"
                     send_mail.text(authorized_recipient, prompt, "Mower Changed Authorization Success")
                     authorized.jason_write('authorized_adresses.json', unseen_email.body)
                 else:  # send an error message
-                    prompt = '''There was a mistake. Either one of the e-mail adresses was not valid, or there was a problem with ...''' \
-                             '''the input format. The body of the e-mail must only contain a list of valid e-mail adresses in ...''' \
-                             ''' the following format: ["adress_1", "adress_2", ..., "adress_n"]. Please pay attention to using ...''' \
+                    prompt = '''There was a mistake. Either one of the e-mail adresses was not valid, or there was a problem with ''' \
+                             '''the input format. The body of the e-mail must ONLY contain a list of valid e-mail adresses in ''' \
+                             ''' the following format: ["adress_1", "adress_2", ..., "adress_n"]. Please pay attention to using ''' \
                              ''' some apostrophes around every adress and the correct parenthesis. '''
                     send_mail.text(authorized_recipient, prompt, "Mower Error")
 
