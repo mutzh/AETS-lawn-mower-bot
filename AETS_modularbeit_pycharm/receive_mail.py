@@ -71,7 +71,7 @@ else:
                 adress_list = adress_string.split(",")
                 print(adress_list)
                 validation_success = validate_adresses(adress_list)
-
+                print (validation_success)
                 # if all adresses are valid, update the list in the json file
                 if validation_success is True:
                     prompt = "All email adresses were validated and the list of authorized emails was updated sucessfully"
