@@ -1,3 +1,9 @@
+# this script is the hearpice of the architecture.
+# it helps to do different things when receiving an email from a list of authorized users:
+# 1. it sends a picture
+# 2. it sends a list of the authorized email users
+# 3. it changes the list of authorized users
+# furthermore it also includes the possibiliy to reset the list of authorized users to contain only a fixed root user
 
 import easyimap as e
 from subprocess import *
@@ -15,7 +21,7 @@ password = 'Info4Ever'
 imap_url = 'imap.gmail.com'
 authorized_email_recipients = authorized.jason_read('authorized_adresses.json')
 root_email_user = "aetsproject2020@gmail.com"
-print(type(authorized_email_recipients))
+
 # define filename for the attachment
 filename = "image.jpg"
 
@@ -60,6 +66,7 @@ else:
             # If all the adresses are valid, and the format is correct-->success mail,    else--> failure mail
             elif authorized_recipient in unseen_email.from_addr and "[" in unseen_email.body:
                 adress_list = unseen_email.body
+                print(adress_list)
                 validation_status = email_adress_validation.validate(adress_list)
                 # if all adresses are valid, update the list in the json file
                 if validation_status is True:
@@ -69,8 +76,8 @@ else:
                 else:  # send an error message
                     prompt = '''There was a mistake. Either one of the e-mail adresses was not valid, or there was a problem with ...''' \
                              '''the input format. The body of the e-mail must only contain a list of valid e-mail adresses in ...''' \
-                             ''' the following format: "['adress_1', 'adress_2', ..., 'adress_n']'. Please pay attention to using ...''' \
-                             ''' some apostropes around every adress and the correct parenthesis. '''
+                             ''' the following format: ["adress_1", "adress_2", ..., "adress_n"]. Please pay attention to using ...''' \
+                             ''' some apostrophes around every adress and the correct parenthesis. '''
                     send_mail.text(authorized_recipient, prompt, "Mower Error")
 
 

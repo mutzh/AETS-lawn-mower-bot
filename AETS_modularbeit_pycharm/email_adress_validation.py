@@ -9,4 +9,4 @@ def validate(adress_list):
     return all_valid
 
 
-
+print(validate(["mutzhdom@gmail.com", "aetsproject2020@gmail.com"]))

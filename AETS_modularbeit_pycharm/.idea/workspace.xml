@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bab96fc4-7c03-4f9d-a872-f64d07e2581c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/email_adress_validation.py" beforeDir="false" afterPath="$PROJECT_DIR$/email_adress_validation.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/receive_mail.py" beforeDir="false" afterPath="$PROJECT_DIR$/receive_mail.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -60,8 +61,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/receive_mail.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="600">
-              <caret line="72" column="96" lean-forward="true" selection-start-line="72" selection-start-column="96" selection-end-line="72" selection-end-column="96" />
+            <state relative-caret-position="246">
+              <caret line="68" column="33" selection-start-line="68" selection-start-column="33" selection-end-line="68" selection-end-column="33" />
               <folding>
                 <element signature="e#1#21#0" expanded="true" />
               </folding>
@@ -81,8 +82,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/email_adress_validation.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="9" selection-start-line="9" selection-end-line="9" />
+            <state relative-caret-position="275">
+              <caret line="11" column="68" selection-start-line="11" selection-start-column="68" selection-end-line="11" selection-end-column="68" />
             </state>
           </provider>
         </entry>
@@ -101,6 +102,7 @@
       <find>rece</find>
       <find>send</find>
       <find>prin</find>
+      <find>print</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -124,13 +126,13 @@
         <option value="$PROJECT_DIR$/tst.py" />
         <option value="$PROJECT_DIR$/send_mail_attachment.py" />
         <option value="$PROJECT_DIR$/validate_email.py" />
-        <option value="$PROJECT_DIR$/email_adress_validation.py" />
         <option value="$PROJECT_DIR$/authorized_adresses.json" />
         <option value="$PROJECT_DIR$/root_mail_adress.json" />
         <option value="$PROJECT_DIR$/authorized.py" />
         <option value="$PROJECT_DIR$/test.py" />
         <option value="$PROJECT_DIR$/send_mail.py" />
         <option value="$PROJECT_DIR$/delete.py" />
+        <option value="$PROJECT_DIR$/email_adress_validation.py" />
         <option value="$PROJECT_DIR$/receive_mail.py" />
       </list>
     </option>
@@ -197,7 +199,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.test (1)">
+  <component name="RunManager" selected="Python.email_adress_validation">
     <configuration name="authorized" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="AETS_modularbeit_pycharm" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -219,7 +221,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="receive_mail" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="email_adress_validation" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="AETS_modularbeit_pycharm" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -231,7 +233,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/receive_mail.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/email_adress_validation.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -305,11 +307,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.email_adress_validation" />
         <item itemvalue="Python.test (1)" />
         <item itemvalue="Python.send_mail" />
         <item itemvalue="Python.authorized" />
         <item itemvalue="Python.validate_email" />
-        <item itemvalue="Python.receive_mail" />
       </list>
     </recent_temporary>
   </component>
@@ -393,13 +395,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/email_adress_validation.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="25">
@@ -428,10 +423,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/email_adress_validation.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="11" column="68" selection-start-line="11" selection-start-column="68" selection-end-line="11" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/receive_mail.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="72" column="96" lean-forward="true" selection-start-line="72" selection-start-column="96" selection-end-line="72" selection-end-column="96" />
+        <state relative-caret-position="246">
+          <caret line="68" column="33" selection-start-line="68" selection-start-column="33" selection-end-line="68" selection-end-column="33" />
           <folding>
             <element signature="e#1#21#0" expanded="true" />
           </folding>
