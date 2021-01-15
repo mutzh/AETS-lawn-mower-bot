@@ -38,11 +38,11 @@ else:
     for unseen_email in unseen_emails:
         if "Reset" in unseen_email.body and "[" not in unseen_email.body:
             authorized.jason_write('authorized_adresses.json', root_email_user)
+            prompt = "the list of authorized users has been reset to only the root_email_user: " + str(root_email_user)
+            send_mail.text(send_mail.text(root_email_user, prompt))
 
         # check if e-mail adress is authorized
         for authorized_recipient in authorized_email_recipients:
-            print('authorized: ', authorized_recipient)
-            print('sender: ', unseen_email.from_addr)
 
             # if condition to send a picture
             if authorized_recipient in unseen_email.from_addr and "Photo" in unseen_email.body and "[" not in unseen_email.body:
