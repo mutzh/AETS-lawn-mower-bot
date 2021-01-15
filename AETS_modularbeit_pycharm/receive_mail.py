@@ -12,7 +12,7 @@ import send_mail
 import time
 import delete
 import authorized
-import email_adress_validation
+from email_adress_validation import validate_adresses
 
 # ESTABLISH CONNECTION TO THE IMAP SERVER AND FETCH THE UNSEEN EMAILS
 # setup variables for the following processes
@@ -65,11 +65,14 @@ else:
             # condition to edit the list of authorized e-mails. the user sends a new list via mail.
             # If all the adresses are valid, and the format is correct-->success mail,    else--> failure mail
             elif authorized_recipient in unseen_email.from_addr and "[" in unseen_email.body:
+
+                # get and validate the adress list from the email body
                 adress_list = unseen_email.body
-                print(adress_list)
-                validation_status = email_adress_validation.validate(adress_list)
+                print("hier gehts los " + adress_list + " hier gehts weiter")
+                validation_success = validate_adresses(adress_list)
+
                 # if all adresses are valid, update the list in the json file
-                if validation_status == True:
+                if validation_success is True:
                     prompt = "All email adresses were validated and the list of authorized emails was updated sucessfully"
                     send_mail.text(authorized_recipient, prompt, "Mower Changed Authorization Success")
                     authorized.jason_write('authorized_adresses.json', unseen_email.body)
