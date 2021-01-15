@@ -11,8 +11,8 @@ def with_attachment(recipient, filename):
     from email import encoders
 
     # define the attribute values for the email
-    body = "I sent this mail by triggering the 'Receive mail' python script form my raspberry pi bitch!"
-    subject = 'Mower Überwachung'
+    body = "Here is the requested surveillance Photo as an attachment"
+    subject = 'Mower surveillance Photo'
 
     # create multipart message object with suject body etc...
     msg = MIMEMultipart()
@@ -44,7 +44,7 @@ def with_attachment(recipient, filename):
     server.quit()
 
 
-def text(recipient, text_body):
+def text(recipient, text_body, subject):
 
     import smtplib
     from email.mime.text import MIMEText
@@ -52,7 +52,7 @@ def text(recipient, text_body):
 
     # define the attribute values for the email
     body = text_body
-    subject = 'List of Authorized users'
+
 
     #   create multipart message object with suject body etc...
     msg = MIMEMultipart()
