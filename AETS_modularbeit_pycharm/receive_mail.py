@@ -56,7 +56,8 @@ else:
             elif authorized_recipient in unseen_email.from_addr and "List" in unseen_email.body and "[" not in unseen_email.body:
                 send_mail.text(authorized_recipient, str(authorized_email_recipients), "Mower Authorized Users")
 
-            # condition to edit the list of authorized e-mails. the user sends a new list via mail. only if all the adresses are valid, proceed
+            # condition to edit the list of authorized e-mails. the user sends a new list via mail.
+            # If all the adresses are valid, and the format is correct-->success mail,    else--> failure mail
             elif authorized_recipient in unseen_email.from_addr and "[" in unseen_email.body:
                 adress_list = unseen_email.body
                 validation_status = email_adress_validation.validate(adress_list)
@@ -66,10 +67,10 @@ else:
                     send_mail.text(authorized_recipient, prompt, "Mower Changed Authorization Success")
                     authorized.jason_write('authorized_adresses.json', unseen_email.body)
                 else:  # send an error message
-                    prompt = "There was a mistake. Either one of the e-mail adresses was not valid, or there was a problem with ..." \
-                             "the input format. The body of the e-mail must only contain a list of valid e-mail adresses in ..." \
-                             " the following format: '[adress_1, adress_2, ..., adress_n]'. Please pay attention to using ..." \
-                             "the correct parenthesis when retrying. "
+                    prompt = '''There was a mistake. Either one of the e-mail adresses was not valid, or there was a problem with ...''' \
+                             '''the input format. The body of the e-mail must only contain a list of valid e-mail adresses in ...''' \
+                             ''' the following format: "['adress_1', 'adress_2', ..., 'adress_n']'. Please pay attention to using ...''' \
+                             ''' some apostropes around every adress and the correct parenthesis. '''
                     send_mail.text(authorized_recipient, prompt, "Mower Error")
 
 
