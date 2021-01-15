@@ -68,7 +68,7 @@ else:
 
                 # get and validate the adress list from the email body
                 adress_list = unseen_email.body
-                print("hier gehts los " + adress_list + " hier gehts weiter")
+                print(len(adress_list))
                 validation_success = validate_adresses(adress_list)
 
                 # if all adresses are valid, update the list in the json file

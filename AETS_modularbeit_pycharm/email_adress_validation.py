@@ -8,6 +8,8 @@ def validate_adresses(adress_list):
         validation_status = all_valid and validate_email(adress, verify=True)
     return validation_status
 
+
+# test call
 a = validate_adresses(["mutzhdom@gmail.com", "aetsproject2020@gmail.com"])
 if a is True:
     print("yes")
