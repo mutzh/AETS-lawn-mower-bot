@@ -12,7 +12,6 @@ import send_mail
 import time
 import delete
 import authorized
-from email_adress_validation import validate_adresses
 
 # ESTABLISH CONNECTION TO THE IMAP SERVER AND FETCH THE UNSEEN EMAILS
 # setup variables for the following processes
@@ -49,7 +48,7 @@ else:
         else:
             # check if e-mail adress is authorized
             for authorized_recipient in authorized_email_recipients:
-
+                print("len" + len(authorized_recipient))
                 # if condition to send a picture
                 if authorized_recipient in unseen_email.from_addr and "Photo" in unseen_email.body and "@" not in unseen_email.body:
 
@@ -60,7 +59,13 @@ else:
 
                 # condition to view the list of authorized e-mails
                 elif authorized_recipient in unseen_email.from_addr and "List" in unseen_email.body and "@" not in unseen_email.body:
-                    send_mail.text(authorized_recipient, str(authorized_email_recipients), "Mower Authorized Users")
+
+                    prompt = str(authorized_email_recipients) + "\n If you wish to change the list, please note: \n" \
+                                 "Please make sure to use the following format:\n" \
+                                 "'adress_1@host.com, adress_2@host.com,..., adress_n@host.com'\n" \
+                                 "Note that there has to be EXACTLY ONE SPACE between two adjacent adresses. " \
+                                 "The QUOTES are also essential!"
+                    send_mail.text(authorized_recipient, prompt, "Mower Authorized Users")
 
                 # condition to edit the list of authorized e-mails. the user sends a new list via mail.
                 # If all the adresses are valid, and the format is correct-->success mail,    else--> failure mail
@@ -71,25 +76,15 @@ else:
                     print('hey', adress_string)
                     adress_list = adress_string.split(", ")
                     print('hey', adress_list)
-                    validation_success = validate_adresses(adress_list)
-                    print(validation_success)
 
-                    # if all adresses are valid, update the list in the json file
-                    if validation_success is True:
+                    #check if a list was entered
+                    if isinstance(adress_list, list):
+                        print("your object is a list !")
+
                         prompt = "All email adresses were validated and the list of authorized emails was updated sucessfully"
                         send_mail.text(authorized_recipient, prompt, "Mower Changed Authorization Success")
                         authorized.jason_write('authorized_adresses.json', adress_list)
                     else:  # send an error message
-                        prompt = "Either one of the e-mail adresses was not valid, or there was a problem with the format.\n" \
-                                 "Please make sure to use the following format:\n" \
-                                 "'adress_1@host.com, adress_2@host.com,..., adress_n@host.com'\n" \
-                                 "Note that there has to be exactly one Space between two adjacent adresses. " \
-                                 "The Quotes are also essential!" \
-
-                        # '''There was a mistake. Either one of the e-mail adresses was not valid, or there was a problem with ''' \
-                        #          '''the input format. \nThe textbody of the e-mail must ONLY contain a list of valid e-mail adresses in \n''' \
-                        #          ''' the following format:     "adress_1@host.com, adress_2@host.com,..., adress_n@host.com" \n'''\
-                        #          '''.'''
                         send_mail.text(authorized_recipient, prompt, "Mower Error")
 
 
