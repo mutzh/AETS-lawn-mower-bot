@@ -68,7 +68,7 @@ else:
 
                     # get and validate the adress list from the email body
                     adress_string = unseen_email.body
-                    print('hey', adress_list)
+                    print('hey', adress_string)
                     adress_list = adress_string.split(", ")
                     print('hey', adress_list)
                     validation_success = validate_adresses(adress_list)
