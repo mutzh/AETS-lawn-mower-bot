@@ -2,7 +2,7 @@
 # both inputs have to be strings
 
 
-def attachment(recipient, filename):
+def with_attachment(recipient, filename):
 
     import smtplib
     from email.mime.text import MIMEText
@@ -28,7 +28,7 @@ def attachment(recipient, filename):
     encoders.encode_base64(part)    # encoding it with base_64 (just google its a standard encoding for emails)
     part.add_header('Content-Disposition', "attachment; filename= "+filename)
 
-    # ttach this part to our message
+    # attach this part to our message
     msg.attach(part)
 
     #   convert object to a string
@@ -72,3 +72,6 @@ def text(recipient, text_body):
     # send mail and quit connection to server
     server.sendmail('aetsproject2020@gmail.com', recipient, txt)
     server.quit()
+
+
+
