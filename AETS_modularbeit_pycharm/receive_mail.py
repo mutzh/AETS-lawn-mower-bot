@@ -48,7 +48,7 @@ else:
         else:
             # check if e-mail adress is authorized
             for authorized_recipient in authorized_email_recipients:
-                print("len" + len(str(authorized_recipient)))
+                print("len" + str(len((authorized_recipient))))
                 # if condition to send a picture
                 if authorized_recipient in unseen_email.from_addr and "Photo" in unseen_email.body and "@" not in unseen_email.body:
 
