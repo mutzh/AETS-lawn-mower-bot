@@ -68,7 +68,7 @@ else:
 
                     # get and validate the adress list from the email body
                     adress_string = unseen_email.body
-                    print('hey', adress_listS)
+                    print('hey', adress_list)
                     adress_list = adress_string.split(", ")
                     print('hey', adress_list)
                     validation_success = validate_adresses(adress_list)
@@ -83,7 +83,7 @@ else:
                         prompt = "Either one of the e-mail adresses was not valid, or there was a problem with the format.\n" \
                                  "Please make sure to use the following format:\n" \
                                  "'adress_1@host.com, adress_2@host.com,..., adress_n@host.com'\n" \
-                                 "Note that there have to be Spaces between the adresses. " \
+                                 "Note that there has to be exactly one Space between two adjacent adresses. " \
                                  "The Quotes are also essential!" \
 
                         # '''There was a mistake. Either one of the e-mail adresses was not valid, or there was a problem with ''' \

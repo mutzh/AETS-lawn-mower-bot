@@ -4,6 +4,7 @@
     <list default="true" id="bab96fc4-7c03-4f9d-a872-f64d07e2581c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/email_adress_validation.py" beforeDir="false" afterPath="$PROJECT_DIR$/email_adress_validation.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/receive_mail.py" beforeDir="false" afterPath="$PROJECT_DIR$/receive_mail.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -61,8 +62,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/receive_mail.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="271">
-              <caret line="70" column="45" selection-start-line="70" selection-start-column="45" selection-end-line="70" selection-end-column="45" />
+            <state relative-caret-position="446">
+              <caret line="85" column="98" selection-start-line="85" selection-start-column="98" selection-end-line="85" selection-end-column="98" />
               <folding>
                 <element signature="e#381#401#0" expanded="true" />
               </folding>
@@ -73,8 +74,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="25">
-              <caret line="1" column="9" selection-start-line="1" selection-start-column="9" selection-end-line="1" selection-end-column="9" />
+            <state relative-caret-position="200">
+              <caret line="8" column="19" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -82,8 +83,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/email_adress_validation.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="275">
-              <caret line="11" selection-start-line="11" selection-start-column="2" selection-end-line="18" selection-end-column="19" />
+            <state relative-caret-position="325">
+              <caret line="13" column="19" lean-forward="true" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -132,8 +133,8 @@
         <option value="$PROJECT_DIR$/authorized.py" />
         <option value="$PROJECT_DIR$/send_mail.py" />
         <option value="$PROJECT_DIR$/delete.py" />
-        <option value="$PROJECT_DIR$/test.py" />
         <option value="$PROJECT_DIR$/email_adress_validation.py" />
+        <option value="$PROJECT_DIR$/test.py" />
         <option value="$PROJECT_DIR$/receive_mail.py" />
       </list>
     </option>
@@ -200,7 +201,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.validate_email">
+  <component name="RunManager" selected="Python.test (1)">
     <configuration name="authorized" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="AETS_modularbeit_pycharm" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -308,9 +309,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.validate_email" />
         <item itemvalue="Python.test (1)" />
         <item itemvalue="Python.email_adress_validation" />
+        <item itemvalue="Python.validate_email" />
         <item itemvalue="Python.send_mail" />
         <item itemvalue="Python.authorized" />
       </list>
@@ -417,24 +418,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test.py">
+    <entry file="file://$PROJECT_DIR$/email_adress_validation.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
-          <caret line="1" column="9" selection-start-line="1" selection-start-column="9" selection-end-line="1" selection-end-column="9" />
+        <state relative-caret-position="325">
+          <caret line="13" column="19" lean-forward="true" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="19" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/email_adress_validation.py">
+    <entry file="file://$PROJECT_DIR$/test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="11" selection-start-line="11" selection-start-column="2" selection-end-line="18" selection-end-column="19" />
+        <state relative-caret-position="200">
+          <caret line="8" column="19" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/receive_mail.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="70" column="45" selection-start-line="70" selection-start-column="45" selection-end-line="70" selection-end-column="45" />
+        <state relative-caret-position="446">
+          <caret line="85" column="98" selection-start-line="85" selection-start-column="98" selection-end-line="85" selection-end-column="98" />
           <folding>
             <element signature="e#381#401#0" expanded="true" />
           </folding>

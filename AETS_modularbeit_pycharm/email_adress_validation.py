@@ -9,11 +9,11 @@ def validate_adresses(adress_list):
     return validation_status
 
 
-# # test call
-# adr = "mutzhdom@gmail.com,aetsproject2020@gmail.com"
-# adr = adr.split(",")
-# print(adr)
-# print(len(adr))
-# a = validate_adresses(adr)
-# if a is True:
-#     print('yess')
+# test call
+adr = "mutzhdom@gmail.com,aetsproject2020@gmail.com"
+adr = adr.split(",,")
+print(adr)
+print(len(adr))
+a = validate_adresses(adr)
+if a is True:
+    print('yess')
