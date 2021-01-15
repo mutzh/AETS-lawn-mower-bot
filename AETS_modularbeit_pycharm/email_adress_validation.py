@@ -10,6 +10,8 @@ def validate_adresses(adress_list):
 
 
 # test call
-a = validate_adresses(["mutzhdom@gmail.com", "aetsproject2020@gmail.com"])
+adr = ["mutzhdom@gmail.com", "aetsproject2020@gmail.com"]
+print(len(adr))
+a = validate_adresses(adr)
 if a is True:
     print("yes")

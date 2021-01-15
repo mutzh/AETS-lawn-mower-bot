@@ -67,20 +67,21 @@ else:
             elif authorized_recipient in unseen_email.from_addr and "[" in unseen_email.body:
 
                 # get and validate the adress list from the email body
-                adress_list = unseen_email.body
-                print(len(adress_list))
+                adress_string = unseen_email.body
+                adress_list = adress_string.split(",")
+                print(adress_list)
                 validation_success = validate_adresses(adress_list)
 
                 # if all adresses are valid, update the list in the json file
                 if validation_success is True:
                     prompt = "All email adresses were validated and the list of authorized emails was updated sucessfully"
                     send_mail.text(authorized_recipient, prompt, "Mower Changed Authorization Success")
-                    authorized.jason_write('authorized_adresses.json', unseen_email.body)
+                    authorized.jason_write('authorized_adresses.json', adress_list)
                 else:  # send an error message
                     prompt = '''There was a mistake. Either one of the e-mail adresses was not valid, or there was a problem with ''' \
-                             '''the input format. The body of the e-mail must ONLY contain a list of valid e-mail adresses in ''' \
-                             ''' the following format: ["adress_1", "adress_2", ..., "adress_n"]. Please pay attention to using ''' \
-                             ''' some apostrophes around every adress and the correct parenthesis. '''
+                             '''the input format. The textbody of the e-mail must ONLY contain a list of valid e-mail adresses in ''' \
+                             ''' the following format:     testmail_1@host.com, testmail_2@host.com,..., testmail_n@host.com \n'''\
+                             '''note that there are no quotes or parenthesis, just comma-seperated e-mail adresses.'''
                     send_mail.text(authorized_recipient, prompt, "Mower Error")
 
 
