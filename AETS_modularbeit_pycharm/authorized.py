@@ -5,9 +5,6 @@ def jason_write(filename, list):
         json.dump(list, f)
 
 
-list = ["mutzhdom@gmail.com", "aetsproject2020@gmail.com"]
-# list = "[a, a, a, a]\r\n"
-jason_write('authorized_adresses.json', list)
 
 def jason_read(filename):
     import json
@@ -16,8 +13,14 @@ def jason_read(filename):
         data = myfile.read()
 
         obj = json.loads(data)
-        print(obj)
+
     return obj
 
+# lst = jason_read('authorized_adresses.json')
+# str1 = " "
+# conv_str = (str1.join(lst))
+# conv_str = conv_str[0:-2]
+# print (conv_str)
 
-jason_read('authorized_adresses.json')
+
+

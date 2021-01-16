@@ -7,13 +7,11 @@
 from authorized import jason_write
 from authorized import jason_read
 
-adr = "mutzhdom@gmail.com,  aetsproject2020@gmail.com"
-adr = adr.split(",")
-print(adr)
+# adr = "mutzhdom@gmail.com,aetsproject2020@gmail.com"
 
-if isinstance(adr, list):
-  print("your object is a list !")
-else:
-    print("failure")
-print(jason_write('authorized_adresses.json', adr))
-jason_read('authorized_adresses.json')
+
+adr = jason_read('authorized_adresses.json')
+print(len(adr))
+# str = "aetsproject202\r\n0@gmail.com\r\n"
+#
+# print(str.translate({ord(i): None for i in '\r\n'}))

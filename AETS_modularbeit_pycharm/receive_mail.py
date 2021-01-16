@@ -21,6 +21,7 @@ imap_url = 'imap.gmail.com'
 authorized_email_recipients = authorized.jason_read('authorized_adresses.json')
 root_email_user = "aetsproject2020@gmail.com"
 
+
 # define filename for the attachment
 filename = "image.jpg"
 
@@ -41,58 +42,55 @@ if unseen_emails_number < 1:
 else:
     # iterate through the list
     for unseen_email in unseen_emails:
-        if "Reset" in unseen_email.body and "[" not in unseen_email.body:
+
+        if "Reset" in unseen_email.body and "@" not in unseen_email.body:
             authorized.jason_write('authorized_adresses.json', root_email_user)
-            prompt = "The list of authorized users has been reset to only the root_email_user: " + str(root_email_user)
+            prompt = "The list of authorized users has been reset to ONLY the root_email_user: " + str(root_email_user)
             send_mail.text(root_email_user, prompt, " Mower Reset Success")
         else:
+            
             # check if e-mail adress is authorized
             for authorized_recipient in authorized_email_recipients:
-                print("len" + str(len((authorized_recipient))))
+
                 # if condition to send a picture
                 if authorized_recipient in unseen_email.from_addr and "Photo" in unseen_email.body and "@" not in unseen_email.body:
-
                     Webcam.take_picture(filename)
-
                     send_mail.with_attachment(authorized_recipient, filename)
-
 
                 # condition to view the list of authorized e-mails
                 elif authorized_recipient in unseen_email.from_addr and "List" in unseen_email.body and "@" not in unseen_email.body:
 
-                    prompt = str(authorized_email_recipients) + "\n If you wish to change the list, please note: \n" \
-                                 "Please make sure to use the following format:\n" \
-                                 "'adress_1@host.com, adress_2@host.com,..., adress_n@host.com'\n" \
-                                 "Note that there has to be EXACTLY ONE SPACE between two adjacent adresses. " \
-                                 "The QUOTES are also essential!"
+                    prompt = "Here is the list of authorized users: \n" + str(authorized_email_recipients) + "\n If you wish to change the list, please note: \n\n" \
+                                 "Here is an example for the Input format:\n" \
+                                 '''"adress_1@host.com, adress_2@host.com,..., adress_n@host.com"\n''' \
+                                 "It is essential to : \n" \
+                                 "1. have quotation marks around the list\n" \
+                                 "2. separate them ONLY with ONE comma and ONE space, like shown in the example above"
                     send_mail.text(authorized_recipient, prompt, "Mower Authorized Users")
 
-                # condition to edit the list of authorized e-mails. the user sends a new list via mail.
-                # If all the adresses are valid, and the format is correct-->success mail,    else--> failure mail
+                # Update Authorized List
                 elif authorized_recipient in unseen_email.from_addr and "@" in unseen_email.body:
 
-                    # get and validate the adress list from the email body
                     adress_string = unseen_email.body
-                    print('hey', adress_string)
+                    adress_string = adress_string.translate({ord(i): None for i in '\r\n'})
                     adress_list = adress_string.split(", ")
-                    print('hey', adress_list)
+                    authorized.jason_write('authorized_adresses.json', adress_list)
 
-                    #check if a list was entered
-                    if isinstance(adress_list, list):
-                        print("your object is a list !")
+                    new_list = authorized.jason_read('authorized_adresses.json')
+                    prompt = "All email adresses were validated and the list of authorized emails was updated sucessfully" \
+                              "The new list is: \n " + str(new_list)
 
-                        prompt = "All email adresses were validated and the list of authorized emails was updated sucessfully"
-                        send_mail.text(authorized_recipient, prompt, "Mower Changed Authorization Success")
-                        authorized.jason_write('authorized_adresses.json', adress_list)
-                    else:  # send an error message
-                        send_mail.text(authorized_recipient, prompt, "Mower Error")
+                    send_mail.text(authorized_recipient, prompt, "Mower Changed Authorization Success")
+
+
+
 
 
 
 
 
     # delete all mails from the account
-    time.sleep(10)
+    time.sleep(5)
     delete.all_mails(email_user, password, imap_url)
 
 
