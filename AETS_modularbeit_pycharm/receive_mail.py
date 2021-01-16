@@ -1,7 +1,10 @@
+#!/bin/pyhton3
+
 # this script is the hearpice of the architecture.
 # it helps to do different things when receiving an email from a list of authorized users:
 # 1. it sends a picture
 # 2. it sends a list of the authorized email users
+
 # 3. it changes the list of authorized users
 # furthermore it also includes the possibiliy to reset the list of authorized users to contain only a fixed root user
 
