@@ -10,93 +10,114 @@ from subprocess import *
 import Webcam
 import send_mail
 import time
-import delete
-import authorized
+import delete_mail
+import authorize
+import imaplib
+from convert_word2list import word2list
 
-# ESTABLISH CONNECTION TO THE IMAP SERVER AND FETCH THE UNSEEN EMAILS
-# setup variables for the following processes
+# SETUP THE INITIAL VARIABLES FOR THIS SCRIPT
+# connection parameters
 email_user = 'aetsproject2020@gmail.com'
 password = 'Info4Ever'
 imap_url = 'imap.gmail.com'
-authorized_email_recipients = authorized.jason_read('authorized_adresses.json')
-root_email_user = "aetsproject2020@gmail.com"
-
-
+# read the current list of authorized users from json file
+authorized_email_recipients = authorize.jason_read('authorized_addresses.json')
+# List of authorized emails can be reset to only root user
+root_email_str = "mutzhdom@gmail.com"
 # define filename for the attachment
 filename = "image.jpg"
 
-# establish connection to the gmail server
-con = e.connect(imap_url, email_user, password, 'Inbox', 587)
+# WHILE LOOP THAT FUNCTIONS AS LISTENER
+sleep_seconds = 3
+deletion_iterator = 0
+while True:
+    # establish connection to the gmail server
+    con = e.connect(imap_url, email_user, password, 'Inbox', 587)
 
-# get list of unseen emails
-unseen_emails = con.unseen(10)
-unseen_emails_number = len(unseen_emails)
-# print("the number of mails received is: ", unseen_emails_number)
-# ----------------------------------------------------------------------------------------------------------------
+    # get list of unseen emails
+    unseen_emails = con.unseen(10)
+    unseen_emails_number = len(unseen_emails)
+    # print("the number of mails received is: ", unseen_emails_number)
+    # ----------------------------------------------------------------------------------------------------------------
 
-# LOOP FOR PROCESSING AUTHORIZED E-MAILS:
-# If there are 0 unseen emails, stop the script here, else proceed
-if unseen_emails_number < 1:
-    pass
+    # LOOP FOR PROCESSING AUTHORIZED E-MAILS:
+    # If there are 0 unseen emails, stop the script here, else proceed
+    # all responses are sent back to the respective e-mail address which performed the request
+    if unseen_emails_number < 1:
+        print("pass")
+        pass
 
-else:
-    # iterate through the list
-    for unseen_email in unseen_emails:
+    else:
+        # iterate through the list
+        for unseen_email in unseen_emails:
 
-        if "Reset" in unseen_email.body and "@" not in unseen_email.body:
-            authorized.jason_write('authorized_adresses.json', root_email_user)
-            prompt = "The list of authorized users has been reset to ONLY the root_email_user: " + str(root_email_user)
-            send_mail.text(root_email_user, prompt, " Mower Reset Success")
-        else:
-            
-            # check if e-mail adress is authorized
-            for authorized_recipient in authorized_email_recipients:
-
-                # if condition to send a picture
-                if authorized_recipient in unseen_email.from_addr and "Photo" in unseen_email.body and "@" not in unseen_email.body:
-                    Webcam.take_picture(filename)
-                    send_mail.with_attachment(authorized_recipient, filename)
-
-                # condition to view the list of authorized e-mails
-                elif authorized_recipient in unseen_email.from_addr and "List" in unseen_email.body and "@" not in unseen_email.body:
-
-                    prompt = "Here is the list of authorized users: \n" + str(authorized_email_recipients) + "\n If you wish to change the list, please note: \n\n" \
-                                 "Here is an example for the Input format:\n" \
-                                 '''"adress_1@host.com, adress_2@host.com,..., adress_n@host.com"\n''' \
-                                 "It is essential to : \n" \
-                                 "1. have quotation marks around the list\n" \
-                                 "2. separate them ONLY with ONE comma and ONE space, like shown in the example above"
-                    send_mail.text(authorized_recipient, prompt, "Mower Authorized Users")
-
-                # Update Authorized List
-                elif authorized_recipient in unseen_email.from_addr and "@" in unseen_email.body:
-
-                    adress_string = unseen_email.body
-                    adress_string = adress_string.translate({ord(i): None for i in '\r\n'})
-                    adress_list = adress_string.split(", ")
-                    authorized.jason_write('authorized_adresses.json', adress_list)
-
-                    new_list = authorized.jason_read('authorized_adresses.json')
-                    prompt = "All email adresses were validated and the list of authorized emails was updated sucessfully" \
-                              "The new list is: \n " + str(new_list)
-
-                    send_mail.text(authorized_recipient, prompt, "Mower Changed Authorization Success")
+            if root_email_str in unseen_email.from_addr and "Reset" in unseen_email.body and "@" not in unseen_email.body:
+                root_email_list = word2list(root_email_str)
+                authorize.jason_write('authorized_addresses.json', root_email_list)
+                authorized_email_recipients = authorize.jason_read('authorized_addresses.json')
+                prompt = "The list of authorized addresses has was to ONLY the root_email_user: " + root_email_str
+                send_mail.text(root_email_str, prompt, " Mower Reset Success")
 
 
+            else:
+                # check if e-mail address is authorized
+                for authorized_recipient in authorized_email_recipients:
+                    # check if the requesting address is authorized
+                    if authorized_recipient not in unseen_email.from_addr:
+                        pass
 
+                    else:
+                        # if condition to send a picture
+                        if "Photo" in unseen_email.body and "@" not in unseen_email.body:
+                            Webcam.take_picture(filename)
+                            send_mail.with_attachment(authorized_recipient, filename)
 
+                        # View authorized e-mails
+                        elif "List" in unseen_email.body and "@" not in unseen_email.body:
 
+                            prompt = "- Authorized addresses: \n  " + str(authorized_email_recipients) + "\n\n- When " \
+                                     "changing the list, please use the format shown in the following example: \n" \
+                                     "  address_1@example.com, address_2@example.com, address_3@example.com \n\n" \
+                                     "- It is essential to: \n" \
+                                     "  1. Separate them with ONLY ONE comma, as shown in the example \n" \
+                                     "  2. Abstain from Wrapping the addresses with quotation-marks or parenthesis\n" \
+                                     "  3. Abstain from inserting the e-mail addresses in the form of links"
+                            send_mail.text(authorized_recipient, prompt, "Mower Authorized Users")
 
+                        # Update Authorized List
+                        elif "@" in unseen_email.body:
+                            print(unseen_email.body)
+                            # update json which contains the list
+                            address_string = unseen_email.body
+                            address_string = address_string.translate({ord(i): None for i in '\r\n'})
+                            address_string = address_string.translate({ord(i): None for i in '<'})
+                            address_string = address_string.translate({ord(i): None for i in '>'})
+                            address_string = address_string.translate({ord(i): None for i in ' '})
+                            address_list = address_string.split(",")
+                            print(address_list)
 
+                            authorize.jason_write('authorized_addresses.json', address_list)
+                            print(authorize.jason_read('authorized_addresses.json'))
+                            # send a success mail with the new list to the requesting adress
+                            new_list = authorize.jason_read('authorized_addresses.json')
+                            prompt = "The list of authorized emails was updated successfully to: \n\n" + str(new_list)
+                            send_mail.text(authorized_recipient, prompt, "Mower Changed Authorization Success")
 
-    # delete all mails from the account
-    time.sleep(5)
-    delete.all_mails(email_user, password, imap_url)
+                            # Update the variable with the authorized addresses for the whole while loop
+                            authorized_email_recipients = authorize.jason_read('authorized_addresses.json')
 
+        # delete all mails from the account, only every 20th iteration
+        if deletion_iterator % 20 == 0:
+            con = imaplib.IMAP4_SSL(imap_url)
+            con.login(email_user, password)
+            delete_mail.delete_days_before(con, "Inbox", 1)
+        # delete.all_mails(email_user, password, imap_url)
 
-
+    # let the script sleep, since it doesnt make sense to check every minute. maybe every 15 minutes is enough
+    print("sleeping for 3 seconds")
+    deletion_iterator += 1
+    time.sleep(sleep_seconds)
 
     # #       define and call subprocess CHANGE THE CALL WITH "pyton" TO A CALL WITH "python3" for the raspberry
-        #         subproc = Popen(['python3', 'send_mail_attachment.py'])
-        #         subproc.wait()
-
+    #         subproc = Popen(['python3', 'send_mail_attachment.py'])
+    #         subproc.wait()

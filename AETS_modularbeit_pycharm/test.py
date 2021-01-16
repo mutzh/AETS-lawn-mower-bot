@@ -10,8 +10,18 @@ from authorized import jason_read
 # adr = "mutzhdom@gmail.com,aetsproject2020@gmail.com"
 
 
-adr = jason_read('authorized_adresses.json')
-print(len(adr))
+
 # str = "aetsproject202\r\n0@gmail.com\r\n"
 #
 # print(str.translate({ord(i): None for i in '\r\n'}))
+
+import delete_mail
+
+import imaplib
+
+
+email_user = 'aetsproject2020@gmail.com'
+password = 'Info4Ever'
+imap_url = 'imap.gmail.com'
+
+
