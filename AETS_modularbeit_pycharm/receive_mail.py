@@ -1,4 +1,4 @@
-#!/bin/pyhton3
+#!/usr/bin/python3
 
 # this script is the hearpice of the architecture.
 # it helps to do different things when receiving an email from a list of authorized users:
