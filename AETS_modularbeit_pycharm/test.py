@@ -24,4 +24,7 @@ email_user = 'aetsproject2020@gmail.com'
 password = 'Info4Ever'
 imap_url = 'imap.gmail.com'
 
-
+# #       define and call subprocess CHANGE THE CALL WITH "pyton" TO A CALL WITH "python3" for the raspberry
+#         subproc = Popen(['python3', 'send_mail_attachment.py'])
+#         subproc.wait()
+from subprocess import *

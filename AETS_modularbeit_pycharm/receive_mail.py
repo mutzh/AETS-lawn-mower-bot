@@ -54,6 +54,7 @@ while True:
         # iterate through the list
         for unseen_email in unseen_emails:
 
+            # Reset to root email address
             if root_email_str in unseen_email.from_addr and "Reset" in unseen_email.body and "@" not in unseen_email.body:
                 root_email_list = word2list(root_email_str)
                 authorize.jason_write('authorized_addresses.json', root_email_list)
@@ -61,6 +62,11 @@ while True:
                 prompt = "The list of authorized addresses has was to ONLY the root_email_user: " + root_email_str
                 send_mail.text(root_email_str, prompt, " Mower Reset Success")
 
+            # shutdown raspi before cutting the power connection
+            elif root_email_str in unseen_email.from_addr and "Shutdown" in unseen_email.body and "@" not in unseen_email.body:
+                # define and call subprocess CHANGE THE CALL WITH "pyton" TO A CALL WITH "python3" for the raspberry
+                subproc = Popen(['bash', 'Shutdown.sh'])
+                subproc.call()
 
             else:
                 # check if e-mail address is authorized
@@ -109,6 +115,8 @@ while True:
                             # Update the variable with the authorized addresses for the whole while loop
                             authorized_email_recipients = authorize.jason_read('authorized_addresses.json')
 
+
+
         # delete all mails from the account, only every 20th iteration
         if deletion_iterator % 20 == 0:
             con = imaplib.IMAP4_SSL(imap_url)
@@ -121,6 +129,4 @@ while True:
     deletion_iterator += 1
     time.sleep(sleep_seconds)
 
-    # #       define and call subprocess CHANGE THE CALL WITH "pyton" TO A CALL WITH "python3" for the raspberry
-    #         subproc = Popen(['python3', 'send_mail_attachment.py'])
-    #         subproc.wait()
+
