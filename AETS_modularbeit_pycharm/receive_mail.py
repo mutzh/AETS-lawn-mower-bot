@@ -9,7 +9,7 @@
 # furthermore it also includes the possibiliy to reset the list of authorized users to contain only a fixed root user
 
 import easyimap as e
-from subprocess import *
+import subprocess
 import Webcam
 import send_mail
 import time
@@ -65,8 +65,7 @@ while True:
             # shutdown raspi before cutting the power connection
             elif root_email_str in unseen_email.from_addr and "Shutdown" in unseen_email.body and "@" not in unseen_email.body:
                 # define and call subprocess CHANGE THE CALL WITH "pyton" TO A CALL WITH "python3" for the raspberry
-                subproc = Popen(['bash', 'Shutdown.sh'])
-                subproc.call()
+                subprocess.call("./Shutdown.sh")
 
             else:
                 # check if e-mail address is authorized
