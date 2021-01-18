@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-# this script is the hearpice of the architecture.
+# this script is the heartpice of the architecture.
 # it helps to do different things when receiving an email from a list of authorized users:
     # 1. it sends a picture
     # 2. it sends a list of the authorized email users
@@ -28,7 +28,7 @@ imap_url = 'imap.gmail.com'
 # read the current list of authorized users from json file
 authorized_email_recipients = authorize.jason_read('authorized_addresses.json')
 # List of authorized emails can be reset to only root user
-root_email_str = "mutzhdom@gmail.com"
+root_email_str = "dominic.mutzhas@hm.edu"
 # define filename for the attachment
 filename = "image.jpg"
 
@@ -103,6 +103,7 @@ while True:
                             address_string = address_string.translate({ord(i): None for i in '<'})
                             address_string = address_string.translate({ord(i): None for i in '>'})
                             address_string = address_string.translate({ord(i): None for i in ' '})
+                            address_string = address_string.translate({ord(i): None for i in '''"'''})
                             address_list = address_string.split(",")
                             print(address_list)
 
