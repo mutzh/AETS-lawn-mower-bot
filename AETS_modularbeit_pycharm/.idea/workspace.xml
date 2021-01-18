@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bab96fc4-7c03-4f9d-a872-f64d07e2581c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/authorize.py" beforeDir="false" afterPath="$PROJECT_DIR$/authorize.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authorized_addresses.json" beforeDir="false" afterPath="$PROJECT_DIR$/authorized_addresses.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/convert_word2list.py" beforeDir="false" afterPath="$PROJECT_DIR$/convert_word2list.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/delete_mail.py" beforeDir="false" afterPath="$PROJECT_DIR$/delete_mail.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/receive_mail.py" beforeDir="false" afterPath="$PROJECT_DIR$/receive_mail.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/send_mail.py" beforeDir="false" afterPath="$PROJECT_DIR$/send_mail.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -27,7 +21,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/authorized_addresses.json">
           <provider selected="true" editor-type-id="text-editor">
             <state>
@@ -72,11 +66,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/receive_mail.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
+            <state relative-caret-position="325">
+              <caret line="89" column="47" lean-forward="true" selection-start-line="89" selection-start-column="47" selection-end-line="89" selection-end-column="47" />
               <folding>
                 <element signature="e#402#422#0" expanded="true" />
               </folding>
@@ -154,8 +148,8 @@
         <option value="$PROJECT_DIR$/authorized_addresses.json" />
         <option value="$PROJECT_DIR$/send_mail.py" />
         <option value="$PROJECT_DIR$/convert_word2list.py" />
-        <option value="$PROJECT_DIR$/receive_mail.py" />
         <option value="$PROJECT_DIR$/authorize.py" />
+        <option value="$PROJECT_DIR$/receive_mail.py" />
       </list>
     </option>
   </component>
@@ -540,16 +534,6 @@
     <entry file="file://$PROJECT_DIR$/Shutdown.sh">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/receive_mail.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
-          <folding>
-            <element signature="e#402#422#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/authorize.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="250">
@@ -575,6 +559,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="17" selection-start-column="16" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/receive_mail.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="89" column="47" lean-forward="true" selection-start-line="89" selection-start-column="47" selection-end-line="89" selection-end-column="47" />
+          <folding>
+            <element signature="e#402#422#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

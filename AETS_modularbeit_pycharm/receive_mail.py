@@ -87,7 +87,7 @@ while True:
 
                             prompt = "- Authorized addresses: \n  " + str(authorized_email_recipients) + "\n\n- When " \
                                      "changing the list, please use the format shown in the following example: \n" \
-                                     "  address_1@example.com, address_2@example.com, address_3@example.com \n\n" \
+                                     "  address1@example.com, address2@example.com, address3@example.com \n\n" \
                                      "- It is essential to: \n" \
                                      "  1. Separate them with ONLY ONE comma, as shown in the example \n" \
                                      "  2. Abstain from Wrapping the addresses with quotation-marks or parenthesis\n" \
