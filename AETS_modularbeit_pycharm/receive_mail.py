@@ -66,7 +66,9 @@ while True:
 
             # shutdown raspi before cutting the power connection
             elif root_email_str in unseen_email.from_addr and "Shutdown" in unseen_email.body and "@" not in unseen_email.body:
-                # define and call subprocess CHANGE THE CALL WITH "pyton" TO A CALL WITH "python3" for the raspberry
+                # define and call subprocess CHANGE THE CALL WITH "python" TO A CALL WITH "python3" for the raspberry
+                send_mail.text(root_email_str, "Shutdown in progress", "Raspberry Shutdown")
+                time.sleep(10)
                 subprocess.call("./Shutdown.sh")
 
             else:
