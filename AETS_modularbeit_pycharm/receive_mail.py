@@ -2,11 +2,13 @@
 
 # this script is the hearpice of the architecture.
 # it helps to do different things when receiving an email from a list of authorized users:
-# 1. it sends a picture
-# 2. it sends a list of the authorized email users
+    # 1. it sends a picture
+    # 2. it sends a list of the authorized email users
+    # 3. it changes the list of authorized users
+# it also allows the following actions to be performed by a root email user ( that user is hardcoded in this script)
+    # 1. Reset the list of authorized users to only the root user
+    # 2. Shutdown the pi before pulling the cable
 
-# 3. it changes the list of authorized users
-# furthermore it also includes the possibiliy to reset the list of authorized users to contain only a fixed root user
 
 import easyimap as e
 import subprocess
@@ -114,18 +116,13 @@ while True:
                             # Update the variable with the authorized addresses for the whole while loop
                             authorized_email_recipients = authorize.jason_read('authorized_addresses.json')
 
-
-
         # delete all mails from the account, only every 20th iteration
         if deletion_iterator % 20 == 0:
             con = imaplib.IMAP4_SSL(imap_url)
             con.login(email_user, password)
-            delete_mail.delete_days_before(con, "Inbox", 1)
+            delete_mail.delete_days_before(con, 1)
         # delete.all_mails(email_user, password, imap_url)
 
     # let the script sleep, since it doesnt make sense to check every minute. maybe every 15 minutes is enough
-    print("sleeping for 3 seconds")
     deletion_iterator += 1
     time.sleep(sleep_seconds)
-
-

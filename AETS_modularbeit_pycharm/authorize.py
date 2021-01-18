@@ -1,9 +1,8 @@
-def jason_write(filename, list):
+def jason_write(filename, liste):
     import json
 
     with open(filename, 'w') as f:
-        json.dump(list, f)
-
+        json.dump(liste, f)
 
 
 def jason_read(filename):
@@ -15,7 +14,3 @@ def jason_read(filename):
         obj = json.loads(data)
 
     return obj
-
-
-
-

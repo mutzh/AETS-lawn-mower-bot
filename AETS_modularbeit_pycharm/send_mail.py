@@ -53,8 +53,7 @@ def text(recipient, text_body, subject):
     # define the attribute values for the email
     body = text_body
 
-
-    #   create multipart message object with suject body etc...
+    # create multipart message object with suject body etc...
     msg = MIMEMultipart()
     msg['From'] = 'aetsproject2020@gmail.com'
     msg['To'] = recipient
@@ -72,5 +71,3 @@ def text(recipient, text_body, subject):
     # send mail and quit connection to server
     server.sendmail('aetsproject2020@gmail.com', recipient, txt)
     server.quit()
-
-
