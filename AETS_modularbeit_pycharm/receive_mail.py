@@ -89,28 +89,31 @@ while True:
 
                             prompt = "- Authorized addresses: \n  " + str(authorized_email_recipients) + "\n\n- When " \
                                      "changing the list, please use the format shown in the following example: \n" \
-                                     "  address1@example.com, address2@example.com, address3@example.com \n\n" \
+                                     "  address1@example.com, address2@example.com, address3@example.com/// \n\n" \
                                      "- It is essential to: \n" \
                                      "  1. Separate them with ONLY ONE comma, as shown in the example \n" \
                                      "  2. Abstain from Wrapping the addresses with quotation-marks or parenthesis\n" \
                                      "  3. Abstain from inserting the e-mail addresses in the form of links"
+                                     "  4. Include the tree backslashes appended to the last email."
+                            
                             send_mail.text(authorized_recipient, prompt, "Mower Authorized Users")
 
                         # Update Authorized List
-                        elif "[" in unseen_email.body:
-                            print(unseen_email.body)
+                        elif "///" in unseen_email.body:
+
                             # update json which contains the list
                             address_string = unseen_email.body
+                            address_string = address_string.split("///")
                             address_string = address_string.translate({ord(i): None for i in '\r\n'})
                             address_string = address_string.translate({ord(i): None for i in '<'})
                             address_string = address_string.translate({ord(i): None for i in '>'})
                             address_string = address_string.translate({ord(i): None for i in ' '})
                             address_string = address_string.translate({ord(i): None for i in '''"'''})
                             address_list = address_string.split(",")
-                            print(address_list)
+
 
                             authorize.jason_write('authorized_addresses.json', address_list)
-                            print(authorize.jason_read('authorized_addresses.json'))
+
                             # send a success mail with the new list to the requesting adress
                             new_list = authorize.jason_read('authorized_addresses.json')
                             prompt = "The list of authorized emails was updated successfully to: \n\n" + str(new_list)
