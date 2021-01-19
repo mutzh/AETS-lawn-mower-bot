@@ -28,7 +28,7 @@ imap_url = 'imap.gmail.com'
 # read the current list of authorized users from json file
 authorized_email_recipients = authorize.jason_read('authorized_addresses.json')
 # List of authorized emails can be reset to only root user
-root_email_str = "dominic.mutzhas@hm.edu"
+root_email_str = "herbert.palm@hm.edu"
 # define filename for the attachment
 filename = "image.jpg"
 
