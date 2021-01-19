@@ -93,9 +93,9 @@ while True:
                                      "- It is essential to: \n" \
                                      "  1. Separate them with ONLY ONE comma, as shown in the example \n" \
                                      "  2. Abstain from Wrapping the addresses with quotation-marks or parenthesis\n" \
-                                     "  3. Abstain from inserting the e-mail addresses in the form of links"
+                                     "  3. Abstain from inserting the e-mail addresses in the form of links" \
                                      "  4. Include the tree backslashes appended to the last email."
-                            
+
                             send_mail.text(authorized_recipient, prompt, "Mower Authorized Users")
 
                         # Update Authorized List
@@ -103,13 +103,22 @@ while True:
 
                             # update json which contains the list
                             address_string = unseen_email.body
-                            address_string = address_string.split("///")
+                            # remove potential unwanted characters
                             address_string = address_string.translate({ord(i): None for i in '\r\n'})
                             address_string = address_string.translate({ord(i): None for i in '<'})
                             address_string = address_string.translate({ord(i): None for i in '>'})
                             address_string = address_string.translate({ord(i): None for i in ' '})
                             address_string = address_string.translate({ord(i): None for i in '''"'''})
-                            address_list = address_string.split(",")
+                            # remove the rest of the email body(this turns the whole thing into a list)
+                            cut_list = address_string.split("///", 1)[0]
+                            # reconvert to string to split up into the respective email addresses
+                            cut_string = str(cut_list)
+                            # remove the characters that were added by splitting it up into a list
+                            cut_string = cut_string.translate({ord(i): None for i in ']'})
+                            cut_string = cut_string.translate({ord(i): None for i in '['})
+                            cut_string = cut_string.translate({ord(i): None for i in "'"})
+                            # split up into respective email addresses
+                            address_list = cut_string.split(",")
 
 
                             authorize.jason_write('authorized_addresses.json', address_list)

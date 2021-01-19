@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bab96fc4-7c03-4f9d-a872-f64d07e2581c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/authorized_addresses.json" beforeDir="false" afterPath="$PROJECT_DIR$/authorized_addresses.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/receive_mail.py" beforeDir="false" afterPath="$PROJECT_DIR$/receive_mail.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
     </list>
@@ -22,11 +23,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/authorized_addresses.json">
           <provider selected="true" editor-type-id="text-editor">
             <state>
-              <caret column="28" lean-forward="true" selection-start-column="28" selection-end-column="47" />
+              <caret column="69" selection-start-column="69" selection-end-column="69" />
             </state>
           </provider>
         </entry>
@@ -52,8 +53,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="458">
-              <caret line="32" column="9" selection-start-line="32" selection-start-column="9" selection-end-line="32" selection-end-column="9" />
+            <state relative-caret-position="433">
+              <caret line="35" selection-start-line="35" selection-end-line="37" selection-end-column="70" />
               <folding>
                 <element signature="e#598#616#0" expanded="true" />
               </folding>
@@ -70,11 +71,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/receive_mail.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="533">
-              <caret line="97" column="28" selection-start-line="97" selection-start-column="28" selection-end-line="97" selection-end-column="28" />
+            <state relative-caret-position="246">
+              <caret line="112" column="71" selection-start-line="112" selection-start-column="71" selection-end-line="112" selection-end-column="71" />
               <folding>
                 <element signature="e#529#549#0" expanded="true" />
               </folding>
@@ -150,11 +151,11 @@
         <option value="$PROJECT_DIR$/send_mail.py" />
         <option value="$PROJECT_DIR$/convert_word2list.py" />
         <option value="$PROJECT_DIR$/authorize.py" />
-        <option value="$PROJECT_DIR$/authorized_addresses.json" />
         <option value="$PROJECT_DIR$/check_addr.py" />
         <option value="$PROJECT_DIR$/Webcam.py" />
         <option value="$PROJECT_DIR$/test.py" />
         <option value="$PROJECT_DIR$/receive_mail.py" />
+        <option value="$PROJECT_DIR$/authorized_addresses.json" />
       </list>
     </option>
   </component>
@@ -230,7 +231,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.test (1)">
+  <component name="RunManager" selected="Python.receive_mail">
     <configuration name="authorized" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="AETS_modularbeit_pycharm" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -338,8 +339,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.test (1)" />
         <item itemvalue="Python.receive_mail" />
+        <item itemvalue="Python.test (1)" />
         <item itemvalue="Python.convert_word2list" />
         <item itemvalue="Python.authorized" />
         <item itemvalue="Python.email_adress_validation" />
@@ -553,13 +554,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/authorized_addresses.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="28" lean-forward="true" selection-start-column="28" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/convert_word2list.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="25">
@@ -572,8 +566,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="458">
-          <caret line="32" column="9" selection-start-line="32" selection-start-column="9" selection-end-line="32" selection-end-column="9" />
+        <state relative-caret-position="433">
+          <caret line="35" selection-start-line="35" selection-end-line="37" selection-end-column="70" />
           <folding>
             <element signature="e#598#616#0" expanded="true" />
           </folding>
@@ -582,11 +576,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/receive_mail.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="533">
-          <caret line="97" column="28" selection-start-line="97" selection-start-column="28" selection-end-line="97" selection-end-column="28" />
+        <state relative-caret-position="246">
+          <caret line="112" column="71" selection-start-line="112" selection-start-column="71" selection-end-line="112" selection-end-column="71" />
           <folding>
             <element signature="e#529#549#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/authorized_addresses.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="69" selection-start-column="69" selection-end-column="69" />
         </state>
       </provider>
     </entry>

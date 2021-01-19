@@ -28,9 +28,18 @@ import imaplib
 
 # import subprocess
 # subprocess.call("./Shutdown.sh")
-text = "[asd//asdsfsaf"
+address_string = "photo, photo, photo///sadfasgfdfagarg"
 
-sep = '//'
-stripped = text.split(sep, 1)[0]
-stripped = stripped + "]"
-print(stripped)
+cut_list = address_string.split("///")
+address_string = str(cut_list)
+
+address_string = address_string.translate({ord(i): None for i in ']'})
+address_string = address_string.translate({ord(i): None for i in '['})
+address_string = address_string.translate({ord(i): None for i in "'"})
+
+address_list = address_string.split(",")
+print(address_list)
+
+
+
+
