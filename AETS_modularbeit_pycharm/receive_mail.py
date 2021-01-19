@@ -57,7 +57,7 @@ while True:
         for unseen_email in unseen_emails:
 
             # Reset to root email address
-            if root_email_str in unseen_email.from_addr and "Reset" in unseen_email.body and "@" not in unseen_email.body:
+            if root_email_str in unseen_email.from_addr and "Reset" in unseen_email.body:
                 root_email_list = word2list(root_email_str)
                 authorize.jason_write('authorized_addresses.json', root_email_list)
                 authorized_email_recipients = authorize.jason_read('authorized_addresses.json')
@@ -65,7 +65,7 @@ while True:
                 send_mail.text(root_email_str, prompt, " Mower Reset Success")
 
             # shutdown raspi before cutting the power connection
-            elif root_email_str in unseen_email.from_addr and "Shutdown" in unseen_email.body and "@" not in unseen_email.body:
+            elif root_email_str in unseen_email.from_addr and "Shutdown" in unseen_email.body:
                 # define and call subprocess CHANGE THE CALL WITH "python" TO A CALL WITH "python3" for the raspberry
                 send_mail.text(root_email_str, "Shutdown in progress", "Raspberry Shutdown")
                 time.sleep(10)
@@ -80,12 +80,12 @@ while True:
 
                     else:
                         # if condition to send a picture
-                        if "Photo" in unseen_email.body and "@" not in unseen_email.body:
+                        if "Photo" in unseen_email.body:
                             Webcam.take_picture(filename)
                             send_mail.with_attachment(authorized_recipient, filename)
 
                         # View authorized e-mails
-                        elif "List" in unseen_email.body and "@" not in unseen_email.body:
+                        elif "List" in unseen_email.body:
 
                             prompt = "- Authorized addresses: \n  " + str(authorized_email_recipients) + "\n\n- When " \
                                      "changing the list, please use the format shown in the following example: \n" \
@@ -97,7 +97,7 @@ while True:
                             send_mail.text(authorized_recipient, prompt, "Mower Authorized Users")
 
                         # Update Authorized List
-                        elif "@" in unseen_email.body:
+                        elif "[" in unseen_email.body:
                             print(unseen_email.body)
                             # update json which contains the list
                             address_string = unseen_email.body

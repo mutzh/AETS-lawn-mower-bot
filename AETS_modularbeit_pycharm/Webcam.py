@@ -2,5 +2,5 @@
 
 def take_picture(filename):
     import os
-    os.system('fswebcam -v -i 0 -d v4l2:/dev/video0 -r 1920x1080 -S 5 --jpeg 100 --save' +' '+filename)
+    os.system('fswebcam -v -i 0 -d v4l2:/dev/video0 -r 1920x1080 -S 5 --jpeg 100 --save ' + filename)
 
