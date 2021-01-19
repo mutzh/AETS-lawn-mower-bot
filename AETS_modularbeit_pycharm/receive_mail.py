@@ -93,7 +93,7 @@ while True:
                                      "- It is essential to: \n" \
                                      "  1. Separate them with ONLY ONE comma, as shown in the example \n" \
                                      "  2. Abstain from Wrapping the addresses with quotation-marks or parenthesis\n" \
-                                     "  3. Abstain from inserting the e-mail addresses in the form of links" \
+                                     "  3. Abstain from inserting the e-mail addresses in the form of links\n" \
                                      "  4. Include the tree backslashes appended to the last email."
 
                             send_mail.text(authorized_recipient, prompt, "Mower Authorized Users")
